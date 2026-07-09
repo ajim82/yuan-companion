@@ -1,1 +1,0 @@
-const cap=60.48,cons=15;info.textContent=`${(cap*.8).toFixed(2)} kWh · ${Math.round((cap*.8)/(cons/100))} km`;function calc(){let kw=((+t.value)-(+s.value))/100*cap;let h=kw/+c.value;out.innerHTML=`<p>${kw.toFixed(2)} kWh</p><p>${h.toFixed(1)} h</p><p>$${Math.round(kw*+p.value).toLocaleString('es-CO')}</p>`;}calc();
