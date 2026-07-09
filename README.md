@@ -1,2 +1,1 @@
-# yuan-companion
-Aplicación para gestionar mi BYD Yuan Plus
+# Yuan Companion v0.2.0
