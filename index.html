@@ -80,34 +80,62 @@ BATERÍA
 <div class="battery">
 
 <svg
-viewBox="0 0 240 240">
+class="battery-svg"
+viewBox="0 0 260 260">
 
 <defs>
 
-<linearGradient
-id="batteryGradient">
+<linearGradient id="batteryGradient"
+x1="0%"
+y1="0%"
+x2="100%"
+y2="0%">
 
-<stop
-offset="0%"
-stop-color="#2AB7FF"/>
+<stop offset="0%" stop-color="#28B8FF"/>
 
-<stop
-offset="100%"
-stop-color="#30D27B"/>
+<stop offset="50%" stop-color="#42E8FF"/>
+
+<stop offset="100%" stop-color="#30D27B"/>
 
 </linearGradient>
+
+<filter id="glow">
+
+<feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+
+<feMerge>
+
+<feMergeNode in="coloredBlur"/>
+
+<feMergeNode in="SourceGraphic"/>
+
+</feMerge>
+
+</filter>
 
 </defs>
 
 <circle
 
-cx="120"
+class="ring-shadow"
 
-cy="120"
+cx="130"
 
-r="95"
+cy="130"
 
-class="ring-background">
+r="100">
+
+</circle>
+
+<circle
+
+class="ring-background"
+
+cx="130"
+
+cy="130"
+
+r="100">
 
 </circle>
 
@@ -115,13 +143,15 @@ class="ring-background">
 
 id="batteryRing"
 
-cx="120"
+class="ring-progress"
 
-cy="120"
+cx="130"
 
-r="95"
+cy="130"
 
-class="ring-progress">
+r="100"
+
+filter="url(#glow)">
 
 </circle>
 
@@ -139,7 +169,7 @@ class="percent">
 
 <div class="battery-label">
 
-Batería
+Estado de carga
 
 </div>
 
@@ -154,6 +184,14 @@ class="energy">
 <div
 id="batteryRange"
 class="range">
+
+≈ 323 km
+
+</div>
+
+</div>
+
+</div>
 
 323 km
 
