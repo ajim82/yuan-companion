@@ -6,26 +6,28 @@
 <meta charset="UTF-8">
 
 <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, viewport-fit=cover">
+name="viewport"
+content="width=device-width, initial-scale=1, viewport-fit=cover">
 
 <meta
-    name="theme-color"
-    content="#08111F">
+name="theme-color"
+content="#08111F">
 
 <meta
-    name="apple-mobile-web-app-capable"
-    content="yes">
+name="apple-mobile-web-app-capable"
+content="yes">
 
 <meta
-    name="apple-mobile-web-app-status-bar-style"
-    content="black-translucent">
+name="apple-mobile-web-app-status-bar-style"
+content="black-translucent">
 
 <title>Yuan Companion</title>
 
 <link rel="manifest" href="manifest.json">
 
-<link rel="stylesheet" href="css/style.css">
+<link
+rel="stylesheet"
+href="css/style.css">
 
 </head>
 
@@ -33,25 +35,43 @@
 
 <div id="app">
 
+<!-- =======================================================
+HEADER
+======================================================= -->
+
 <header class="topbar">
 
-    <div>
+<div>
 
-        <h1>Yuan Companion</h1>
+<h1>
 
-        <p id="today"></p>
+Yuan Companion
 
-    </div>
+</h1>
 
-    <div class="avatar">
+<p id="today">
 
-        🚗
+</p>
 
-    </div>
+</div>
+
+<div class="avatar">
+
+🚗
+
+</div>
 
 </header>
 
+<!-- =======================================================
+CONTENIDO
+======================================================= -->
+
 <main>
+
+<!-- =======================================================
+BATERÍA
+======================================================= -->
 
 <section class="card hero">
 
@@ -67,9 +87,13 @@ viewBox="0 0 240 240">
 <linearGradient
 id="batteryGradient">
 
-<stop offset="0%" stop-color="#2AB7FF"/>
+<stop
+offset="0%"
+stop-color="#2AB7FF"/>
 
-<stop offset="100%" stop-color="#32D27D"/>
+<stop
+offset="100%"
+stop-color="#30D27B"/>
 
 </linearGradient>
 
@@ -193,6 +217,92 @@ Objetivo
 
 </section>
 
+<!-- =======================================================
+MI YUAN PLUS
+======================================================= -->
+
+<section class="card">
+
+<h2>
+
+Mi Yuan Plus
+
+</h2>
+
+<div class="stats-grid">
+
+<div class="stat">
+
+<span>
+
+Batería útil
+
+</span>
+
+<strong>
+
+60.48 kWh
+
+</strong>
+
+</div>
+
+<div class="stat">
+
+<span>
+
+Consumo
+
+</span>
+
+<strong>
+
+15.0 kWh/100 km
+
+</strong>
+
+</div>
+
+<div class="stat">
+
+<span>
+
+Objetivo
+
+</span>
+
+<strong>
+
+80 %
+
+</strong>
+
+</div>
+
+<div class="stat">
+
+<span>
+
+Costo medio
+
+</span>
+
+<strong>
+
+$150/km
+
+</strong>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =======================================================
+ESTADO
+======================================================= -->
+
 <section class="card">
 
 <div class="status">
@@ -209,8 +319,8 @@ Todo listo para conducir
 
 <p id="statusMessage">
 
-Con la carga actual puedes conducir aproximadamente
-323 km.
+Con la batería actual puedes recorrer aproximadamente
+323 km sin necesidad de recargar.
 
 </p>
 
@@ -219,6 +329,10 @@ Con la carga actual puedes conducir aproximadamente
 </div>
 
 </section>
+
+<!-- =======================================================
+CALCULADORA
+======================================================= -->
 
 <section class="card">
 
@@ -283,7 +397,6 @@ max="100"
 value="80">
 
 </div>
-
 <div class="field">
 
 <label>
@@ -298,7 +411,9 @@ id="price"
 
 type="number"
 
-value="1000">
+value="1000"
+
+placeholder="1000">
 
 </div>
 
@@ -306,7 +421,7 @@ value="1000">
 
 <label>
 
-Potencia cargador
+Potencia del cargador
 
 </label>
 
@@ -346,14 +461,17 @@ DC 80 kW
 
 </div>
 
-<button
-id="calculate">
+<button id="calculate">
 
-Calcular
+Calcular carga
 
 </button>
 
 </section>
+
+<!-- =======================================================
+RESULTADOS
+======================================================= -->
 
 <section class="card">
 
@@ -367,7 +485,7 @@ Resultado
 
 <span>
 
-Energía
+Energía necesaria
 
 </span>
 
@@ -383,7 +501,7 @@ Energía
 
 <span>
 
-Tiempo
+Tiempo estimado
 
 </span>
 
@@ -415,7 +533,7 @@ $30.240
 
 <span>
 
-Autonomía
+Autonomía recuperada
 
 </span>
 
@@ -429,6 +547,10 @@ Autonomía
 
 </section>
 
+<!-- =======================================================
+ACCIONES RÁPIDAS
+======================================================= -->
+
 <section class="card">
 
 <h2>
@@ -441,7 +563,11 @@ Acciones rápidas
 
 <div class="quick-item">
 
+<div>
+
 ⚡
+
+</div>
 
 <span>
 
@@ -453,7 +579,11 @@ Nueva carga
 
 <div class="quick-item">
 
-📊
+<div>
+
+📈
+
+</div>
 
 <span>
 
@@ -465,7 +595,11 @@ Historial
 
 <div class="quick-item">
 
+<div>
+
 🚗
+
+</div>
 
 <span>
 
@@ -477,7 +611,11 @@ Viajes
 
 <div class="quick-item">
 
+<div>
+
 ⚙️
+
+</div>
 
 <span>
 
@@ -493,11 +631,19 @@ Configuración
 
 </main>
 
+<!-- =======================================================
+BARRA INFERIOR
+======================================================= -->
+
 <nav class="bottom-nav">
 
 <button class="active">
 
+<div>
+
 🏠
+
+</div>
 
 <span>
 
@@ -509,7 +655,11 @@ Inicio
 
 <button>
 
+<div>
+
 ⚡
+
+</div>
 
 <span>
 
@@ -521,7 +671,11 @@ Carga
 
 <button>
 
+<div>
+
 📈
+
+</div>
 
 <span>
 
@@ -533,7 +687,11 @@ Historial
 
 <button>
 
+<div>
+
 🚗
+
+</div>
 
 <span>
 
@@ -545,7 +703,11 @@ Viajes
 
 <button>
 
+<div>
+
 ⚙️
+
+</div>
 
 <span>
 
@@ -559,7 +721,41 @@ Ajustes
 
 </div>
 
+<!-- =======================================================
+JAVASCRIPT
+======================================================= -->
+
+<script src="js/date.js"></script>
+
+<script src="js/dashboard.js"></script>
+
 <script src="js/app.js"></script>
+
+<script>
+
+document.addEventListener(
+
+"DOMContentLoaded",
+
+()=>{
+
+if(typeof loadHeader==="function"){
+
+loadHeader();
+
+}
+
+if(typeof Dashboard!=="undefined"){
+
+Dashboard.animate();
+
+}
+
+}
+
+);
+
+</script>
 
 </body>
 
