@@ -1,0 +1,9 @@
+{
+  "name":"Yuan Companion",
+  "short_name":"Yuan",
+  "display":"standalone",
+  "start_url":"./",
+  "background_color":"#08111F",
+  "theme_color":"#08111F",
+  "icons":[]
+}
