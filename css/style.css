@@ -767,3 +767,8 @@ border:1px solid rgba(255,255,255,.05);
 .quick-item{
 cursor:pointer;
 }
+
+/* v2 beta */
+.hero{border:1px solid rgba(42,183,255,.2);}
+.percent{letter-spacing:-2px;text-shadow:0 0 20px rgba(42,183,255,.35);}
+.quick-item:hover{background:rgba(42,183,255,.08);}
