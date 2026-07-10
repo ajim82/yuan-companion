@@ -768,7 +768,24 @@ border:1px solid rgba(255,255,255,.05);
 cursor:pointer;
 }
 
-/* v2 beta */
-.hero{border:1px solid rgba(42,183,255,.2);}
-.percent{letter-spacing:-2px;text-shadow:0 0 20px rgba(42,183,255,.35);}
-.quick-item:hover{background:rgba(42,183,255,.08);}
+
+/* ===== v2.5 Dashboard polish ===== */
+body{
+background:
+radial-gradient(circle at top,#18365d 0%,#08111F 55%,#04070d 100%);
+}
+.hero{
+border:1px solid rgba(42,183,255,.25);
+box-shadow:0 30px 60px rgba(0,0,0,.45);
+}
+.percent{
+font-size:4rem;
+letter-spacing:-2px;
+text-shadow:0 0 25px rgba(42,183,255,.45);
+}
+.bottom-nav{
+border-top:1px solid rgba(255,255,255,.08);
+}
+.quick-item:hover{
+transform:translateY(-4px);
+}

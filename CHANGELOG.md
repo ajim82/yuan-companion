@@ -7,3 +7,8 @@
 - Mejora visual inicial.
 - Tarjetas con elevación.
 - Fondo hero mejorado.
+
+## v2.5
+- Dashboard visual refinado
+- Fondo premium
+- Mejoras de tipografía
