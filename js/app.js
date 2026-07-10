@@ -6,7 +6,7 @@
 
 const BATTERY_CAPACITY = 60.48;      // kWh útiles
 const AVG_CONSUMPTION = 15.0;        // kWh /100 km
-const RING_LENGTH = 597;
+const RING_LENGTH = 628;
 
 const $ = (id) => document.getElementById(id);
 
@@ -124,7 +124,41 @@ function updateDashboard(percent){
     batteryRange.textContent =
         Math.round(range) + " km";
 
-    updateRing(percent);
+   function updateRing(percent){
+
+const offset =
+RING_LENGTH*(1-percent/100);
+
+batteryRing.animate(
+
+[
+{
+
+strokeDashoffset:RING_LENGTH
+
+},
+
+{
+
+strokeDashoffset:offset
+
+}
+
+],
+
+{
+
+duration:900,
+
+fill:"forwards",
+
+easing:"ease-out"
+
+}
+
+);
+
+}
 
     updateStatus(range);
 
