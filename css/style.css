@@ -748,3 +748,22 @@ grid-template-columns:1fr;
 }
 
 }
+
+
+/* ===== v2 visual upgrade ===== */
+.hero{
+background:linear-gradient(135deg,rgba(42,183,255,.18),rgba(48,210,123,.08));
+}
+.card{
+transition:transform .25s ease, box-shadow .25s ease;
+}
+.card:hover{
+transform:translateY(-3px);
+box-shadow:0 28px 50px rgba(0,0,0,.35);
+}
+.metric{
+border:1px solid rgba(255,255,255,.05);
+}
+.quick-item{
+cursor:pointer;
+}
