@@ -1,1 +1,566 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Yuan Companion</title><link rel="stylesheet" href="css/style.css"></head><body><div class="app"><h1>Yuan Companion</h1><div class="card"><div class="ring">80%</div><p id="info"></p></div><div class="card"><h2>Calculadora</h2><input id="s" type="range" min="0" max="100" value="30"><input id="t" type="range" min="0" max="100" value="80"><input id="p" type="number" value="1000"><select id="c"><option value="3.5">3.5kW</option><option value="7">7kW</option><option value="60">60kW</option></select><button onclick="calc()">Calcular</button><div id="out"></div></div></div><script src="js/app.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<meta
+    name="theme-color"
+    content="#08111F">
+
+<meta
+    name="apple-mobile-web-app-capable"
+    content="yes">
+
+<meta
+    name="apple-mobile-web-app-status-bar-style"
+    content="black-translucent">
+
+<title>Yuan Companion</title>
+
+<link rel="manifest" href="manifest.json">
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div id="app">
+
+<header class="topbar">
+
+    <div>
+
+        <h1>Yuan Companion</h1>
+
+        <p id="today"></p>
+
+    </div>
+
+    <div class="avatar">
+
+        🚗
+
+    </div>
+
+</header>
+
+<main>
+
+<section class="card hero">
+
+<div class="hero-background"></div>
+
+<div class="battery">
+
+<svg
+viewBox="0 0 240 240">
+
+<defs>
+
+<linearGradient
+id="batteryGradient">
+
+<stop offset="0%" stop-color="#2AB7FF"/>
+
+<stop offset="100%" stop-color="#32D27D"/>
+
+</linearGradient>
+
+</defs>
+
+<circle
+
+cx="120"
+
+cy="120"
+
+r="95"
+
+class="ring-background">
+
+</circle>
+
+<circle
+
+id="batteryRing"
+
+cx="120"
+
+cy="120"
+
+r="95"
+
+class="ring-progress">
+
+</circle>
+
+</svg>
+
+<div class="battery-content">
+
+<div
+id="batteryPercent"
+class="percent">
+
+80%
+
+</div>
+
+<div class="battery-label">
+
+Batería
+
+</div>
+
+<div
+id="batteryEnergy"
+class="energy">
+
+48.38 kWh
+
+</div>
+
+<div
+id="batteryRange"
+class="range">
+
+323 km
+
+</div>
+
+</div>
+
+</div>
+
+<div class="metrics">
+
+<div class="metric">
+
+<div class="metric-title">
+
+Capacidad
+
+</div>
+
+<div class="metric-value">
+
+60.48
+
+</div>
+
+</div>
+
+<div class="metric">
+
+<div class="metric-title">
+
+Consumo
+
+</div>
+
+<div class="metric-value">
+
+15.0
+
+</div>
+
+</div>
+
+<div class="metric">
+
+<div class="metric-title">
+
+Objetivo
+
+</div>
+
+<div class="metric-value">
+
+80%
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="card">
+
+<div class="status">
+
+<div class="status-dot"></div>
+
+<div>
+
+<h3>
+
+Todo listo para conducir
+
+</h3>
+
+<p id="statusMessage">
+
+Con la carga actual puedes conducir aproximadamente
+323 km.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>
+
+Calculadora de carga
+
+</h2>
+
+<div class="field">
+
+<label>
+
+Batería actual
+
+<span id="startValue">
+
+30%
+
+</span>
+
+</label>
+
+<input
+
+id="start"
+
+type="range"
+
+min="0"
+
+max="100"
+
+value="30">
+
+</div>
+
+<div class="field">
+
+<label>
+
+Objetivo
+
+<span id="targetValue">
+
+80%
+
+</span>
+
+</label>
+
+<input
+
+id="target"
+
+type="range"
+
+min="0"
+
+max="100"
+
+value="80">
+
+</div>
+
+<div class="field">
+
+<label>
+
+Precio kWh
+
+</label>
+
+<input
+
+id="price"
+
+type="number"
+
+value="1000">
+
+</div>
+
+<div class="field">
+
+<label>
+
+Potencia cargador
+
+</label>
+
+<select id="charger">
+
+<option value="1.6">
+
+110V · 1.6 kW
+
+</option>
+
+<option value="3.5" selected>
+
+110V · 3.5 kW
+
+</option>
+
+<option value="7">
+
+Wallbox 7 kW
+
+</option>
+
+<option value="60">
+
+DC 60 kW
+
+</option>
+
+<option value="80">
+
+DC 80 kW
+
+</option>
+
+</select>
+
+</div>
+
+<button
+id="calculate">
+
+Calcular
+
+</button>
+
+</section>
+
+<section class="card">
+
+<h2>
+
+Resultado
+
+</h2>
+
+<div class="result">
+
+<span>
+
+Energía
+
+</span>
+
+<strong id="energyResult">
+
+30.24 kWh
+
+</strong>
+
+</div>
+
+<div class="result">
+
+<span>
+
+Tiempo
+
+</span>
+
+<strong id="timeResult">
+
+8 h 38 min
+
+</strong>
+
+</div>
+
+<div class="result">
+
+<span>
+
+Costo
+
+</span>
+
+<strong id="costResult">
+
+$30.240
+
+</strong>
+
+</div>
+
+<div class="result">
+
+<span>
+
+Autonomía
+
+</span>
+
+<strong id="rangeResult">
+
+202 km
+
+</strong>
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>
+
+Acciones rápidas
+
+</h2>
+
+<div class="quick-grid">
+
+<div class="quick-item">
+
+⚡
+
+<span>
+
+Nueva carga
+
+</span>
+
+</div>
+
+<div class="quick-item">
+
+📊
+
+<span>
+
+Historial
+
+</span>
+
+</div>
+
+<div class="quick-item">
+
+🚗
+
+<span>
+
+Viajes
+
+</span>
+
+</div>
+
+<div class="quick-item">
+
+⚙️
+
+<span>
+
+Configuración
+
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<nav class="bottom-nav">
+
+<button class="active">
+
+🏠
+
+<span>
+
+Inicio
+
+</span>
+
+</button>
+
+<button>
+
+⚡
+
+<span>
+
+Carga
+
+</span>
+
+</button>
+
+<button>
+
+📈
+
+<span>
+
+Historial
+
+</span>
+
+</button>
+
+<button>
+
+🚗
+
+<span>
+
+Viajes
+
+</span>
+
+</button>
+
+<button>
+
+⚙️
+
+<span>
+
+Ajustes
+
+</span>
+
+</button>
+
+</nav>
+
+</div>
+
+<script src="js/app.js"></script>
+
+</body>
+
+</html>
