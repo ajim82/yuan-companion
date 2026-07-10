@@ -317,9 +317,11 @@ transform:rotate(-90deg);
 
 fill:none;
 
-stroke:#23354E;
+stroke:#22344D;
 
 stroke-width:16;
+
+opacity:.55;
 
 }
 
@@ -333,21 +335,36 @@ stroke-width:16;
 
 stroke-linecap:round;
 
-stroke-dasharray:597;
+stroke-dasharray:628;
 
-stroke-dashoffset:119;
+stroke-dashoffset:126;
 
-transition:1s;
+transition:
+
+stroke-dashoffset
+
+1.1s ease;
 
 filter:
 
 drop-shadow(
 
-0 0 12px
+0 0 18px
 
-rgba(42,183,255,.45)
+rgba(42,183,255,.55)
 
 );
+
+}
+.ring-shadow{
+
+fill:none;
+
+stroke:
+
+rgba(255,255,255,.03);
+
+stroke-width:26;
 
 }
 
